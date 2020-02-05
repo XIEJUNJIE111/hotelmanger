@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--mybatis配置文件-->
+<configuration>
+
+    <!--配置类型别名-->
+    <typeAliases>
+
+    </typeAliases>
+
+    <!--default 使用命名的id-->
+    <environments default="env1">
+        <!--命名id-->
+        <environment id="env1">
+            <!--事务管理方式-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--数据源配置 POOLED 使用mybatis内置简易连接池-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/xjj?serverTimezone=Asia/Shanghai&amp;characterEncoding=utf-8&amp;useSSL=false"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper class="com.newer.mapper.RoomMapper"/>
+        <mapper class="com.newer.mapper.CheckinsMapper"/>
+
+    </mappers>
+
+</configuration>
